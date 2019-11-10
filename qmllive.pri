@@ -6,6 +6,9 @@ android|ios|qnx {
 isEmpty(PREFIX): PREFIX = $$[QT_INSTALL_PREFIX]
 isEmpty(EXAMPLES_PREFIX): EXAMPLES_PREFIX = $$[QT_INSTALL_EXAMPLES]/qmllive
 
+BUILD_DIR=$$shadowed($$PWD)
+VERSION = 5.12.1
+
 VERSIONS = $$split(VERSION, ".")
 VERSION_MAJOR = $$member(VERSIONS, 0)
 unset(VERSIONS)
