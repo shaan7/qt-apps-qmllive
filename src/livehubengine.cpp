@@ -187,7 +187,7 @@ void LiveHubEngine::publishWorkspace()
 {
     if (!m_filePublishingActive) { return; }
     emit beginPublishWorkspace();
-    QDirIterator iter(m_watcher->directory(), QDir::Dirs | QDir::NoDotAndDotDot, QDirIterator::Subdirectories);
+    QDirIterator iter(m_watcher->directory(), QDir::Dirs | QDir::NoDotAndDotDot, QDirIterator::Subdirectories | QDirIterator::FollowSymlinks);
     publishDirectory(m_watcher->directory(), false);
     while (iter.hasNext()) {
         publishDirectory(iter.next(), false);
